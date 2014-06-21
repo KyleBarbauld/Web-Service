@@ -1,0 +1,102 @@
+body {
+	background-image: url('dark-wood-flooring.jpg');
+	height: auto;
+}
+
+header{
+	font-size: 50px;
+	padding: 10px;
+	padding-top: 30px;
+	padding-bottom: 60px;
+}
+
+#searchForm {
+	
+	background-color: #eee;
+	color: black;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+#tableOutput {
+	background-color: #eee;
+	color: black;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 20px;
+	min-height: 300px;
+	height: auto;
+	width: 75%;
+	display: block;
+	text-align: center;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+#shortOutput {
+	background-color: #eee;
+	color: black;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+#textForm{
+	color: black;
+}
+
+table {
+	width: 100%;
+}
+
+tr {
+	border: 1px solid black;
+	text-align: center;
+}
+
+td {
+	border: 1px solid black;
+	text-align: center;
+}
+
+#wrap {
+   width:75%;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   
+}
+#right_col {
+   float:right;
+}
+
+#SearchForm {
+    width: 40em;   
+}
+
+#SearchForm ul {
+    width: 100%;
+    list-style: none;
+    padding:0;
+}
+
+#SearchForm li {
+    float: left;
+    width: 12%;
+    padding: 4px 0 4px 0;   
+}
+
+#SearchForm li a {
+    display: block;
+    text-align: center;
+    margin: 0 4px 0 0;
+}

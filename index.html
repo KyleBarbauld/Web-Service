@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Project 2</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" href="http://people.rit.edu/kmb7571/css/reveal.css">
+<script src="http://people.rit.edu/kmb7571/js/reveal_js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="http://people.rit.edu/kmb7571/js/reveal_js/jquery.reveal.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<link rel="stylesheet" href="js/on-screen-keyboard-master/onScreenKeyboard.css" type="text/css" media="screen" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/on-screen-keyboard-master/jquery.onScreenKeyboard.js"></script>
+<script>
+  $(function () {
+          $('#input_container').children('.osk-trigger').onScreenKeyboard({
+                  rewireReturn : 'submit',
+                  rewireTab : true
+          });
+  });
+</script>
+
+<style>
+  #input_container {
+          margin: 2% auto;
+  }
+
+  #input_container > input,
+  #input_container > textarea {
+          resize: none;
+          margin-bottom: 1em;
+          border: 1px solid #333;
+          padding: 0.25em;
+          background: #FEFEFE;
+  }
+</style>
+<style type="text/css">
+  @import "js/DataTables-1.9.4/media/css/demo_page.css";
+  @import "js/DataTables-1.9.4/media/css/demo_table.css";
+</style>
+<script class="jsbin" src="http://datatables.net/download/build/jquery.dataTables.nightly.js"></script>
+<script>
+$(document).ready(function(){
+  $('#example').dataTable();
+});
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <div id="left_col">
+          <form id="searchForm">
+    <fieldset>
+      <legend>Search Criteria</legend>
+      <p>Organization Type <select id="orgType" name="type" onchange=""></select></p>
+      <p><span id="orgLabel">Organization Name</span> <input id="orgName" name="name" type="text"> <em style="color: rgb(104, 129, 162);">*can be partial - "vol" for "Volunteer"</em></p>
+      <p>State <select id="state" name="state" onchange="getCities(this.value)">
+        <option value="">
+          All States
+        </option>
+        <option value="AK">AK</option>
+        <option value="AL">AL</option>
+        <option value="AR">AR</option>
+        <option value="AZ">AZ</option>
+        <option value="CA">CA</option>
+        <option value="CO">CO</option>
+        <option value="CT">CT</option>
+        <option value="DC">DC</option>
+        <option value="DE">DE</option>
+        <option value="FL">FL</option>
+        <option value="GA">GA</option>
+        <option value="HI">HI</option>
+        <option value="IA">IA</option>
+        <option value="ID">ID</option>
+        <option value="IL">IL</option>
+        <option value="IN">IN</option>
+        <option value="KS">KS</option>
+        <option value="KY">KY</option>
+        <option value="LA">LA</option>
+        <option value="MA">MA</option>
+        <option value="MD">MD</option>
+        <option value="ME">ME</option>
+        <option value="MI">MI</option>
+        <option value="MN">MN</option>
+        <option value="MO">MO</option>
+        <option value="MS">MS</option>
+        <option value="MT">MT</option>
+        <option value="NC">NC</option>
+        <option value="ND">ND</option>
+        <option value="NE">NE</option>
+        <option value="NH">NH</option>
+        <option value="NJ">NJ</option>
+        <option value="NM">NM</option>
+        <option value="NV">NV</option>
+        <option value="NY" selected="selected">NY</option>
+        <option value="OH">OH</option>
+        <option value="OK">OK</option>
+        <option value="OR">OR</option>
+        <option value="PA">PA</option>
+        <option value="RI">RI</option>
+        <option value="SC">SC</option>
+        <option value="SD">SD</option>
+        <option value="TN">TN</option>
+        <option value="TX">TX</option>
+        <option value="UT">UT</option>
+        <option value="VA">VA</option>
+        <option value="VT">VT</option>
+        <option value="WA">WA</option>
+        <option value="WI">WI</option>
+        <option value="WV">WV</option>
+        <option value="WY">WY</option>
+      </select> <span id="orgCitySearch"></span></p>
+      <p>County <input id="county" name="county" type="text"></p>
+      <p>ZIP Code <input id="zip" name="zip" type="text"></p>
+      <div >
+        <center><input value="Show Results" onclick="checkSearch()" id="btnSearch" class="button" type="button" ><input type="reset" class="button" value="Reset Form" onclick=""></center>
+      </div>
+    </fieldset>
+  </form>
+    </div>
+
+	    <div id="right_col">
+	 
+	          <form id="input_container">
+	          	<div id ="textForm">Enter Organization Input:</div>
+           <input type="text" id="orgId" class="osk-trigger" placeholder="">
+			     <input type="button" value="find data" onclick="getTabs($('#orgId').val())"/>
+			  </form>
+
+	    </div>
+</div>
+<div id="tableOutput"></div>
+ <div id="myModal" class="reveal-modal">
+     <div id="navigation"></div>
+	  <div id="modalOutput">
+	  		<table id="tableOutputPopUp"></table>
+	  </div>
+	  <a class="close-reveal-modal">&#215;</a>
+  </div>
+</body>
+</html>
